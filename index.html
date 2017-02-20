@@ -1,0 +1,488 @@
+<html>
+  <head>
+    <title>Best Practice with jQuery</title>
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css">
+    <style>
+      .step {
+        display: none;
+      }
+
+      .step.step-1 {
+        display: block;
+      }
+
+      .error {
+        color: red;
+        font-weight: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">SidoarjoDev</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Semangat belajar!</h1>
+        <p>Best practice with jQuery</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+      </div>
+
+      <div id="faq">
+        <div class="panel panel-default">
+          <div class="panel-heading">FAQ 1</div>
+          <div class="panel-body" style="display: none;">
+            <p>Modo quodsi commodo nec an. Ex mei possit impedit deseruisse, essent phaedrum est ea, ut nec liber oblique tacimates. Ex admodum invidunt consetetur vim, nec everti scripserit te. Dolore graecis in cum. In erat albucius eam, sed cu ferri civibus efficiendi. Rebum clita quodsi ut nec. No ius nobis explicari incorrupte.</p>
+            <p>Eu admodum minimum usu. Eum id ludus repudiandae, ludus aperiri molestiae mei ex. Labitur ponderum ex mel, sit dolorum nostrum eu. Cum dolore possim ex. Ius ut errem mediocritatem.</p>
+            <p>Omnium mediocritatem ea pro, lucilius convenire ex nam, vix mediocrem consulatu id. Congue possit est an. Eros molestiae mei ea, at dicam verterem iudicabit pro. Meis latine adversarium eam ei, detracto necessitatibus usu ei.</p>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">FAQ 2</div>
+          <div class="panel-body" style="display: none;">
+            <p>Modo quodsi commodo nec an. Ex mei possit impedit deseruisse, essent phaedrum est ea, ut nec liber oblique tacimates. Ex admodum invidunt consetetur vim, nec everti scripserit te. Dolore graecis in cum. In erat albucius eam, sed cu ferri civibus efficiendi. Rebum clita quodsi ut nec. No ius nobis explicari incorrupte.</p>
+            <p>Eu admodum minimum usu. Eum id ludus repudiandae, ludus aperiri molestiae mei ex. Labitur ponderum ex mel, sit dolorum nostrum eu. Cum dolore possim ex. Ius ut errem mediocritatem.</p>
+            <p>Omnium mediocritatem ea pro, lucilius convenire ex nam, vix mediocrem consulatu id. Congue possit est an. Eros molestiae mei ea, at dicam verterem iudicabit pro. Meis latine adversarium eam ei, detracto necessitatibus usu ei.</p>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">FAQ 3</div>
+          <div class="panel-body" style="display: none;">
+            <p>Modo quodsi commodo nec an. Ex mei possit impedit deseruisse, essent phaedrum est ea, ut nec liber oblique tacimates. Ex admodum invidunt consetetur vim, nec everti scripserit te. Dolore graecis in cum. In erat albucius eam, sed cu ferri civibus efficiendi. Rebum clita quodsi ut nec. No ius nobis explicari incorrupte.</p>
+            <p>Eu admodum minimum usu. Eum id ludus repudiandae, ludus aperiri molestiae mei ex. Labitur ponderum ex mel, sit dolorum nostrum eu. Cum dolore possim ex. Ius ut errem mediocritatem.</p>
+            <p>Omnium mediocritatem ea pro, lucilius convenire ex nam, vix mediocrem consulatu id. Congue possit est an. Eros molestiae mei ea, at dicam verterem iudicabit pro. Meis latine adversarium eam ei, detracto necessitatibus usu ei.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <h3 class="text-center">Form</h3>
+          <nav aria-label="Page navigation" class="text-center">
+            <ul class="pagination">
+              <li class="prev">
+                <a href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li class="page active" data-index="0"><a href="#">1</a></li>
+              <li class="page" data-index="1"><a href="#">2</a></li>
+              <li class="page" data-index="2"><a href="#">3</a></li>
+              <li class="page" data-index="3"><a href="#">4</a></li>
+              <li class="page" data-index="4"><a href="#">5</a></li>
+              <li class="next">
+                <a href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <form action="#" method="post" id="form">
+            <div class="step step-1">
+              <label for="fullname">Nama Lengkap</label>
+              <input type="text" class="form-control" placeholder="Nama Lengkap" id="fullname" name="fullname">
+              <br>
+              <label for="nickname">Nama Panggilan</label>
+              <input type="text" class="form-control" placeholder="Nama Panggilan" id="nickname" name="nickname">
+              <br>
+              <label for="birthday">Tanggal Lahir</label>
+              <input type="text" class="form-control datepicker" placeholder="Tanggal Lahir" id="birthday" name="birthday" readonly>
+              <br>
+              <label for="age">Usia</label>
+              <input type="text" class="form-control" placeholder="Usia" id="age" name="age" readonly>
+              <br>
+              <label for="birthplace">Tempat Lahir</label>
+              <input type="text" class="form-control" placeholder="Tempat Lahir" id="birthplace" name="birthplace">
+              <br>
+            </div>
+            <div class="step step-2">
+              <label for="address">Alamat Rumah</label>
+              <textarea class="form-control" placeholder="Alamat Rumah" id="address" name="address"></textarea>
+              <br>
+              <label for="phone">No. HP</label>
+              <input type="text" class="form-control" placeholder="No. HP" id="phone" name="phone">
+              <br>
+              <label for="email">Alamat E-mail</label>
+              <input type="email" class="form-control" placeholder="Alamat E-mail" id="email" name="email">
+              <br>
+              <label for="hobby">Hobi</label>
+              <input type="text" class="form-control" placeholder="Hobi" id="hobby" name="hobby">
+              <br>
+              <label for="favfood">Makanan Favorit</label>
+              <input type="text" class="form-control" placeholder="Makanan Favorit" id="favfood" name="favfood">
+              <br>
+            </div>
+            <div class="step step-3">
+              <label for="customfield1">Custom Field 1</label>
+              <input type="text" class="form-control" placeholder="Custom Field 1" id="customfield1" name="customfield1">
+              <br>
+              <label for="customfield2">Custom Field 2</label>
+              <input type="text" class="form-control" placeholder="Custom Field 2" id="customfield2" name="customfield2">
+              <br>
+              <label for="customfield3">Custom Field 3</label>
+              <input type="text" class="form-control" placeholder="Custom Field 3" id="customfield3" name="customfield3">
+              <br>
+              <label for="customfield4">Custom Field 4</label>
+              <input type="text" class="form-control" placeholder="Custom Field 4" id="customfield4" name="customfield4">
+              <br>
+              <label for="customfield5">Custom Field 5</label>
+              <input type="text" class="form-control" placeholder="Custom Field 5" id="customfield5" name="customfield5">
+              <br>
+            </div>
+            <div class="step step-4">
+              <label for="customfield6">Custom Field 6</label>
+              <input type="text" class="form-control" placeholder="Custom Field 6" id="customfield6" name="customfield6">
+              <br>
+              <label for="customfield7">Custom Field 7</label>
+              <input type="text" class="form-control" placeholder="Custom Field 7" id="customfield7" name="customfield7">
+              <br>
+              <label for="customfield8">Custom Field 8</label>
+              <input type="text" class="form-control" placeholder="Custom Field 8" id="customfield8" name="customfield8">
+              <br>
+              <label for="customfield9">Custom Field 9</label>
+              <input type="text" class="form-control" placeholder="Custom Field 9" id="customfield9" name="customfield9">
+              <br>
+              <label for="customfield10">Custom Field 10</label>
+              <input type="text" class="form-control" placeholder="Custom Field 10" id="customfield10" name="customfield10">
+              <br>
+            </div>
+            <div class="step step-5">
+              <label for="customfield11">Custom Field 11</label>
+              <input type="text" class="form-control" placeholder="Custom Field 11" id="customfield11" name="customfield11">
+              <br>
+              <label for="customfield12">Custom Field 12</label>
+              <input type="text" class="form-control" placeholder="Custom Field 12" id="customfield12" name="customfield12">
+              <br>
+              <label for="customfield13">Custom Field 13</label>
+              <input type="text" class="form-control" placeholder="Custom Field 13" id="customfield13" name="customfield13">
+              <br>
+              <label for="customfield14">Custom Field 14</label>
+              <input type="text" class="form-control" placeholder="Custom Field 14" id="customfield14" name="customfield14">
+              <br>
+              <label for="customfield15">Custom Field 15</label>
+              <input type="text" class="form-control" placeholder="Custom Field 15" id="customfield15" name="customfield15">
+              <br>
+            </div>
+            <button class="btn btn-default btn-block btn-lg btn-info btn-next" type="button">Next</button>
+            <button class="btn btn-default btn-block btn-lg btn-success btn-submit" type="submit" style="display: none;">Submit</button>
+          </form>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+    </div>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="vendor/momentjs/moment.min.js"></script>
+    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.datepicker').datepicker({
+          format: 'yyyy/mm/dd',
+        });
+
+        $('#faq .panel-heading').click(function(){
+          $('#faq .panel-body').slideUp();
+          if ($(this).parent().children('.panel-body').css('display') == 'block') {
+            $(this).parent().children('.panel-body').slideUp();
+          }else {
+            $(this).parent().children('.panel-body').slideDown();
+          }
+        });
+
+        var currentPage = 0;
+        var maxPage = $('.pagination li.page').length;
+
+        $('.pagination li.page').click(function(event){
+          event.preventDefault();
+          var form = formValidation();
+
+          if (form.valid() == true) {
+            $('.pagination li.page').removeClass('active');
+            $(this).addClass('active');
+
+            currentPage = parseInt($(this).attr('data-index'));
+            if (currentPage == maxPage - 1) {
+              $('.btn-next').hide();
+              $('.btn-submit').fadeIn();
+            }else {
+              $('.btn-submit').hide();
+              $('.btn-next').fadeIn();
+            }
+
+            $('.step').hide();
+            $('.step.step-' + (currentPage + 1)).fadeIn();
+          }
+        });
+
+        $('.pagination li.next').click(function(event){
+          event.preventDefault();
+          var form = formValidation();
+
+          if (form.valid() == true) {
+            currentPage++;
+            if (currentPage >= maxPage) {
+              currentPage = 0;
+            }
+            if (currentPage == maxPage - 1) {
+              $('.btn-next').hide();
+              $('.btn-submit').fadeIn();
+            }else {
+              $('.btn-submit').hide();
+              $('.btn-next').fadeIn();
+            }
+            $('.pagination li.page').removeClass('active');
+            $('.pagination li.page').eq(currentPage).addClass('active');
+
+            $('.step').hide();
+            $('.step.step-' + (currentPage + 1)).fadeIn();
+          }
+        });
+
+        $('.pagination li.prev').click(function(event){
+          event.preventDefault();
+          var form = formValidation();
+
+      		if (form.valid() == true) {
+            currentPage--;
+            if (currentPage < 0) {
+              currentPage = maxPage - 1;
+            }
+            if (currentPage == maxPage - 1) {
+              $('.btn-next').hide();
+              $('.btn-submit').fadeIn();
+            }else {
+              $('.btn-submit').hide();
+              $('.btn-next').fadeIn();
+            }
+            $('.pagination li.page').removeClass('active');
+            $('.pagination li.page').eq(currentPage).addClass('active');
+
+            $('.step').hide();
+            $('.step.step-' + (currentPage + 1)).fadeIn();
+          }
+        });
+
+        $('.btn-next').click(function(event){
+          event.preventDefault();
+          var form = formValidation();
+
+      		if (form.valid() == true) {
+            currentPage++;
+            if (currentPage >= maxPage) {
+              currentPage = 0;
+            }
+            if (currentPage == maxPage - 1) {
+              $('.btn-next').hide();
+              $('.btn-submit').fadeIn();
+            }else {
+              $('.btn-submit').hide();
+              $('.btn-next').fadeIn();
+            }
+            $('.pagination li.page').removeClass('active');
+            $('.pagination li.page').eq(currentPage).addClass('active');
+
+            $('.step').hide();
+            $('.step.step-' + (currentPage + 1)).fadeIn();
+      		}
+        });
+
+        $('#birthday').change(function(){
+          var birthday = $(this).val().replace(/\//g, '');
+          $('#age').val(moment().diff(moment(birthday, 'YYYYMMDD'), 'years'));
+        });
+
+        function formValidation() {
+          var form = $("#form");
+      		form.validate({
+      			rules: {
+      				fullname: {
+      					required: true,
+      				},
+      				nickname: {
+      					required: true,
+      				},
+              birthday: {
+      					required: true,
+      				},
+              age: {
+      					required: true,
+      				},
+              birthplace: {
+      					required: true,
+      				},
+      				address: {
+      					required: true,
+      				},
+              phone: {
+      					required: true,
+      				},
+              email: {
+      					required: true,
+      				},
+              hobby: {
+      					required: true,
+      				},
+              favfood: {
+      					required: true,
+      				},
+              customfield1: {
+      					required: true,
+      				},
+              customfield2: {
+      					required: true,
+      				},
+              customfield3: {
+      					required: true,
+      				},
+              customfield4: {
+      					required: true,
+      				},
+              customfield5: {
+      					required: true,
+      				},
+              customfield6: {
+      					required: true,
+      				},
+              customfield7: {
+      					required: true,
+      				},
+              customfield8: {
+      					required: true,
+      				},
+              customfield9: {
+      					required: true,
+      				},
+              customfield10: {
+      					required: true,
+      				},
+              customfield11: {
+      					required: true,
+      				},
+              customfield12: {
+      					required: true,
+      				},
+              customfield13: {
+      					required: true,
+      				},
+              customfield14: {
+      					required: true,
+      				},
+              customfield15: {
+      					required: true,
+      				},
+      			},
+      			messages: {
+      				fullname: {
+      					required: "Nama Lengkap tidak boleh kosong.",
+      				},
+      				nickname: {
+      					required: "Nama Panggilan tidak boleh kosong.",
+      				},
+              birthday: {
+      					required: "Tanggal Lahir tidak boleh kosong.",
+      				},
+              age: {
+      					required: "Usia tidak boleh kosong.",
+      				},
+              birthplace: {
+      					required: "Tempat Lahir tidak boleh kosong.",
+      				},
+              address: {
+      					required: "Alamat Rumah tidak boleh kosong.",
+      				},
+              phone: {
+      					required: "No. HP tidak boleh kosong.",
+      				},
+              email: {
+      					required: "Alamat E-mail tidak boleh kosong.",
+      				},
+              hobby: {
+      					required: "Hobi tidak boleh kosong.",
+      				},
+              favfood: {
+      					required: "Makanan Favorit tidak boleh kosong.",
+      				},
+              customfield1: {
+      					required: "Custom Field 1 tidak boleh kosong.",
+      				},
+              customfield2: {
+      					required: "Custom Field 2 tidak boleh kosong.",
+      				},
+              customfield3: {
+      					required: "Custom Field 3 tidak boleh kosong.",
+      				},
+              customfield4: {
+      					required: "Custom Field 4 tidak boleh kosong.",
+      				},
+              customfield5: {
+      					required: "Custom Field 5 tidak boleh kosong.",
+      				},
+              customfield6: {
+      					required: "Custom Field 6 tidak boleh kosong.",
+      				},
+              customfield7: {
+      					required: "Custom Field 7 tidak boleh kosong.",
+      				},
+              customfield8: {
+      					required: "Custom Field 8 tidak boleh kosong.",
+      				},
+              customfield9: {
+      					required: "Custom Field 9 tidak boleh kosong.",
+      				},
+              customfield10: {
+      					required: "Custom Field 10 tidak boleh kosong.",
+      				},
+              customfield11: {
+      					required: "Custom Field 11 tidak boleh kosong.",
+      				},
+              customfield12: {
+      					required: "Custom Field 12 tidak boleh kosong.",
+      				},
+              customfield13: {
+      					required: "Custom Field 13 tidak boleh kosong.",
+      				},
+              customfield14: {
+      					required: "Custom Field 14 tidak boleh kosong.",
+      				},
+              customfield15: {
+      					required: "Custom Field 15 tidak boleh kosong.",
+      				},
+      			}
+      		});
+
+          return form;
+        }
+
+      });
+    </script>
+  </body>
+</html>
